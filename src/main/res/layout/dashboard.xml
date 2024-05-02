@@ -17,12 +17,12 @@
     <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
         android:id="@+id/enableService"
         android:layout_width="333dp"
-        android:layout_height="513dp"
+        android:layout_height="333dp"
         android:layout_marginTop="137dp"
         android:scaleType="centerCrop"
         android:src="@color/primaryColorBlue"
 
-        apps:shapeDrawable="@drawable/roundangle"
+        apps:shapeDrawable="@drawable/squircle_shape"
 
         apps:layout_constraintTop_toTopOf="parent"
         apps:layout_constraintStart_toStartOf="parent"

@@ -55,7 +55,7 @@ class AccessibilityServices : AccessibilityService() {
 
             }
             AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
-                Log.i(this@AccessibilityServices.javaClass.simpleName, "Touched")
+                Log.i(this@AccessibilityServices.javaClass.simpleName, "State Changed")
 
                 accessibilityEvent.source?.let { accessibilityNodeInfo ->
 
