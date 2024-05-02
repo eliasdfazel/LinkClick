@@ -1,7 +1,6 @@
 package co.geeksempire.link.click
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import co.geeksempire.link.click.databinding.DashboardBinding
 
