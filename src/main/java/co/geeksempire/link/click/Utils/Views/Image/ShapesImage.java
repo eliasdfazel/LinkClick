@@ -108,8 +108,8 @@ public class ShapesImage extends AppCompatImageView {
             if (mMaskDrawable != null) {
                 int sc = cacheCanvas.save();
                 mMaskDrawable.draw(cacheCanvas);
-                cacheCanvas.saveLayer(mBoundsF, mMaskedPaint,
-                        Canvas.ALL_SAVE_FLAG);
+//                cacheCanvas.saveLayer(mBoundsF, mMaskedPaint, Canvas.ALL_SAVE_FLAG);
+                cacheCanvas.saveLayer(mBoundsF.left, mBoundsF.top, mBoundsF.right, mBoundsF.bottom, mMaskedPaint);
                 super.onDraw(cacheCanvas);
                 cacheCanvas.restoreToCount(sc);
             } else {

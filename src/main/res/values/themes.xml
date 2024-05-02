@@ -28,4 +28,11 @@
 
     </style>
 
+    <style name="LinkClick">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:linksClickable">true</item>
+        <item name="android:autoLink">web</item>
+    </style>
+
 </resources>

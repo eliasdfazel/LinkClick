@@ -46,7 +46,7 @@ class Dashboard : AppCompatActivity() {
 
                     })
 
-            }, 1357)
+            }, 555)
 
         }
 

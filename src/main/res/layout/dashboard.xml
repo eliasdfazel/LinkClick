@@ -14,12 +14,15 @@
     android:layout_height="match_parent"
     xmlns:apps="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
         android:id="@+id/enableService"
         android:layout_width="333dp"
         android:layout_height="513dp"
         android:layout_marginTop="137dp"
-        android:background="@color/primaryColorBlue"
+        android:scaleType="centerCrop"
+        android:src="@color/primaryColorBlue"
+
+        apps:shapeDrawable="@drawable/roundangle"
 
         apps:layout_constraintTop_toTopOf="parent"
         apps:layout_constraintStart_toStartOf="parent"

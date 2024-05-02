@@ -13,6 +13,8 @@ import android.accessibilityservice.AccessibilityService
 import android.content.Intent
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
+import co.geeksempire.link.click.Utils.Operations.extractUrl
+
 
 class AccessibilityServices : AccessibilityService() {
 
@@ -23,18 +25,44 @@ class AccessibilityServices : AccessibilityService() {
 
         when (accessibilityEvent.eventType) {
             AccessibilityEvent.TYPE_VIEW_CLICKED -> {
+                Log.i(this@AccessibilityServices.javaClass.simpleName, "Clicked")
 
-                accessibilityEvent.source?.let {
-
-                    val source = accessibilityEvent.source!!
+                accessibilityEvent.source?.let { accessibilityNodeInfo ->
 
                     try {
 
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, source.text.toString())
+                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
+                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
 
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, source.hintText.toString())
+                    } catch (e: Exception) {}
 
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, source.contentDescription.toString())
+                }
+
+            }
+            AccessibilityEvent.TYPE_TOUCH_INTERACTION_END -> {
+                Log.i(this@AccessibilityServices.javaClass.simpleName, "Touched")
+
+                accessibilityEvent.source?.let { accessibilityNodeInfo ->
+
+                    try {
+
+                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
+                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
+
+                    } catch (e: Exception) {}
+
+                }
+
+            }
+            AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
+                Log.i(this@AccessibilityServices.javaClass.simpleName, "Touched")
+
+                accessibilityEvent.source?.let { accessibilityNodeInfo ->
+
+                    try {
+
+                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
+                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
 
                     } catch (e: Exception) {}
 
