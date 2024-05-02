@@ -18,7 +18,7 @@ fun String.extractUrl() : String {
 
     }
 
-    return links.last()
+    return links.last() + "/?utm_campaign=GeeksEmpire&utm_source=LinkClick"
 }
 
 fun String.extractUrls() : ArrayList<String> {

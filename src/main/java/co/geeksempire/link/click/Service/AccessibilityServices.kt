@@ -10,7 +10,9 @@
 package co.geeksempire.link.click.Service
 
 import android.accessibilityservice.AccessibilityService
+import android.app.Service
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import co.geeksempire.link.click.Utils.Operations.extractUrl
@@ -18,53 +20,32 @@ import co.geeksempire.link.click.Utils.Operations.extractUrl
 
 class AccessibilityServices : AccessibilityService() {
 
-
     override fun onServiceConnected() {}
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int { return Service.START_STICKY }
 
     override fun onAccessibilityEvent(accessibilityEvent: AccessibilityEvent) {
 
+        var parseUrl: String = ""
+
         when (accessibilityEvent.eventType) {
             AccessibilityEvent.TYPE_VIEW_CLICKED -> {
-                Log.i(this@AccessibilityServices.javaClass.simpleName, "Clicked")
 
-                accessibilityEvent.source?.let { accessibilityNodeInfo ->
+                if (accessibilityEvent.packageName == "com.instagram.android") {
+                    Log.i(this@AccessibilityServices.javaClass.simpleName, "Clicked")
 
-                    try {
+                    accessibilityEvent.source?.let { accessibilityNodeInfo ->
 
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
+                        try {
 
-                    } catch (e: Exception) {}
+                            Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
+                            Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
 
-                }
+                            parseUrl = accessibilityNodeInfo.text.toString().extractUrl().toString()
 
-            }
-            AccessibilityEvent.TYPE_TOUCH_INTERACTION_END -> {
-                Log.i(this@AccessibilityServices.javaClass.simpleName, "Touched")
+                        } catch (e: Exception) {}
 
-                accessibilityEvent.source?.let { accessibilityNodeInfo ->
-
-                    try {
-
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
-
-                    } catch (e: Exception) {}
-
-                }
-
-            }
-            AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
-                Log.i(this@AccessibilityServices.javaClass.simpleName, "State Changed")
-
-                accessibilityEvent.source?.let { accessibilityNodeInfo ->
-
-                    try {
-
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
-                        Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
-
-                    } catch (e: Exception) {}
+                    }
 
                 }
 
@@ -72,6 +53,14 @@ class AccessibilityServices : AccessibilityService() {
             else -> {
 
             }
+        }
+
+        if (parseUrl.isNotEmpty()) {
+
+            applicationContext.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(parseUrl)).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            })
+
         }
 
     }
