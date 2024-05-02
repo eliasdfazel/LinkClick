@@ -2,6 +2,10 @@
 
     <string name="app_name">Link Click</string>
 
+    <string name="confirm">Confirm</string>
+    <string name="dismiss">Dismiss</string>
+
+    <string name="serviceTitle">Link Click Service</string>
     <string name="serviceDescription">
         Link Click
         \n
