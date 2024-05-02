@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="app_name">Link Click</string>
+
+    <string name="serviceDescription">
+        Split Super Shortcuts
+        \n
+        ℹ️ Accessibility Service Permission;\n
+        To Create Multi-Window and Open Applications in Split Screen Simultaneously to Increase Productivity and Multitasking.\n
+    </string>
+
+    <string name="serviceSummary">
+        Split Shortcuts | This Permission Gives Me An Ability To Create Multi-Window &amp; Open Apps in Split Screen Simultaneously
+    </string>
+
+</resources>
