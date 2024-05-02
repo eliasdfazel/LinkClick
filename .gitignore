@@ -1,1 +1,3 @@
 /build
+/src/test/java/co/geeksempire/link/click/ExampleUnitTest.kt
+/src/androidTest/java/co/geeksempire/link/click/ExampleInstrumentedTest.kt
