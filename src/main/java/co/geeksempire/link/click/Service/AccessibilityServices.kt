@@ -41,6 +41,9 @@ class AccessibilityServices : AccessibilityService() {
                 }
 
             }
+            else -> {
+
+            }
         }
 
     }
