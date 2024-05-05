@@ -39,11 +39,11 @@ class AccessibilityServices : AccessibilityService() {
                         try {
 
                             Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString())
-                            Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl().toString())
+                            Log.i(this@AccessibilityServices.javaClass.simpleName, accessibilityNodeInfo.text.toString().extractUrl())
 
-                            parseUrl = accessibilityNodeInfo.text.toString().extractUrl().toString()
+                            parseUrl = accessibilityNodeInfo.text.toString().extractUrl()
 
-                        } catch (e: Exception) {}
+                        } catch (_: Exception) {}
 
                     }
 

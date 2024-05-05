@@ -14,18 +14,76 @@
     android:layout_height="match_parent"
     xmlns:apps="http://schemas.android.com/apk/res-auto">
 
-    <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/enableService"
         android:layout_width="333dp"
         android:layout_height="333dp"
         android:layout_marginTop="137dp"
         android:scaleType="centerCrop"
-        android:src="@color/primaryColorBlue"
-
-        apps:shapeDrawable="@drawable/squircle_shape"
+        android:src="@drawable/off"
 
         apps:layout_constraintTop_toTopOf="parent"
         apps:layout_constraintStart_toStartOf="parent"
         apps:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/testLinkClicks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="37dp"
+        android:layout_marginTop="37dp"
+        android:textColor="@color/premiumLight"
+        android:textSize="17sp"
+        android:fontFamily="@font/ubuntu"
+
+        apps:layout_constraintTop_toBottomOf="@id/enableService"/>
+
+    <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
+        android:id="@+id/share"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="37dp"
+        android:src="@drawable/ripple_effect_white"
+        android:background="@drawable/share"
+
+        apps:layout_constraintBottom_toBottomOf="parent"
+        apps:layout_constraintEnd_toEndOf="parent"/>
+
+    <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
+        android:id="@+id/facebook"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginStart="37dp"
+        android:src="@drawable/ripple_effect_white"
+        android:background="@drawable/facebook"
+
+        apps:layout_constraintBottom_toBottomOf="parent"
+        apps:layout_constraintStart_toStartOf="parent"/>
+
+    <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
+        android:id="@+id/youtube"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginStart="13dp"
+        android:src="@drawable/ripple_effect_white"
+        android:background="@drawable/youtube"
+
+        apps:layout_constraintBottom_toBottomOf="parent"
+        apps:layout_constraintStart_toEndOf="@id/facebook"/>
+
+    <co.geeksempire.link.click.Utils.Views.Image.ShapesImage
+        android:id="@+id/instagram"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginStart="13dp"
+        android:src="@drawable/ripple_effect_white"
+        android:background="@drawable/instagram"
+
+        apps:layout_constraintBottom_toBottomOf="parent"
+        apps:layout_constraintStart_toEndOf="@id/youtube"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

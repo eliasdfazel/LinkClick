@@ -17,4 +17,19 @@
         Long Click | Make it easier to click on links when it is inside long text or where It is normally not available.
     </string>
 
+    <string name="testNotice"><![CDATA[
+        🧪 Test Link Click <br/>
+        <br/><br/>
+        Click here to open instagram and test Link Click.
+    ]]></string>
+    <string name="sharingScript">
+        Click On Instagram Links in Descriptions https://GeeksEmpire.co/LinkClick #Link #Click #GeeksEmpire
+    </string>
+
+    <string name="facebookLink" translatable="false">https://facebook.com/GeeksEmpire</string>
+    <string name="youtubeLink" translatable="false">https://youtube.com/@GeeksEmpireCo/shorts</string>
+    <string name="instagramLink" translatable="false">https://instagram.com/geeksempire.co/</string>
+
+    <string name="testLinkClick" translatable="false">https://instagram.com/geeksempire.co/reels</string>
+
 </resources>
