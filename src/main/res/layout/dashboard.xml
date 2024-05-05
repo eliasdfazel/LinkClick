@@ -18,7 +18,7 @@
         android:id="@+id/enableService"
         android:layout_width="333dp"
         android:layout_height="333dp"
-        android:layout_marginTop="137dp"
+        android:layout_marginTop="103dp"
         android:scaleType="centerCrop"
         android:src="@drawable/off"
 

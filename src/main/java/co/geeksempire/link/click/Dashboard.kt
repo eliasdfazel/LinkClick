@@ -23,16 +23,6 @@ class Dashboard : AppCompatActivity() {
         dashboardBinding = DashboardBinding.inflate(layoutInflater)
         setContentView(dashboardBinding.root)
 
-        dashboardBinding.enableService.setImageDrawable(if (accessibilityServiceEnabled(this@Dashboard)) {
-
-            getDrawable(R.drawable.on)
-
-        } else {
-
-            getDrawable(R.drawable.off)
-
-        })
-
         dashboardBinding.enableService.setOnClickListener {
 
             Handler(Looper.getMainLooper()).postDelayed({
@@ -100,6 +90,21 @@ class Dashboard : AppCompatActivity() {
             }
 
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        dashboardBinding.enableService.setImageDrawable(if (accessibilityServiceEnabled(this@Dashboard)) {
+
+            getDrawable(R.drawable.on)
+
+        } else {
+
+            getDrawable(R.drawable.off)
+
+        })
 
     }
 

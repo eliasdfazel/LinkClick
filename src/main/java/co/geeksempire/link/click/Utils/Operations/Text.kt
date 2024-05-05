@@ -18,7 +18,7 @@ fun String.extractUrl() : String {
 
     }
 
-    return links.last() + "/?utm_campaign=GeeksEmpire&utm_source=LinkClick"
+    return links.last() + "?utm_campaign=GeeksEmpire&utm_source=LinkClick"
 }
 
 fun String.extractUrls() : ArrayList<String> {
@@ -32,7 +32,7 @@ fun String.extractUrls() : ArrayList<String> {
 
     while (matcher.find()) {
 
-        links.add(matcher.group())
+        links.add(matcher.group() + "?utm_campaign=GeeksEmpire&utm_source=LinkClick")
 
     }
 
